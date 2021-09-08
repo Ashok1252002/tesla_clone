@@ -15,6 +15,13 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 		alignItems: "center",
 	},
+	headerTitle: {
+		color: "white",
+		fontSize: 16,
+		fontWeight: "bold",
+		alignItems: "center",
+		justifyContent: "center",
+	},
 });
 
 export default styles;
