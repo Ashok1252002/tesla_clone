@@ -1,10 +1,33 @@
-import React from "react";
-import { View, Text, ImageBackground, Image } from "react-native";
+import React, { useState } from "react";
+import {
+	View,
+	Text,
+	ImageBackground,
+	Image,
+	TouchableOpacity,
+} from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCog, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import {
+	faCog,
+	faToolbox,
+	faFan,
+	faKey,
+	faLock,
+	faUnlockAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles";
+import Menu from "../Menu/index";
 
 const CarItem = () => {
+	const [locked, setLocked] = useState(true);
+	const clickLock = () => {
+		if (locked) {
+			setLocked(false);
+		} else {
+			setLocked(true);
+		}
+	};
+
 	return (
 		<View style={styles.carContainer}>
 			<ImageBackground
@@ -13,13 +36,21 @@ const CarItem = () => {
 			/>
 			{/* Header */}
 			<View style={styles.header}>
-				<FontAwesomeIcon style={styles.icon} icon={faCog} size={24} />
+				<TouchableOpacity>
+					<FontAwesomeIcon
+						style={styles.icon}
+						icon={faCog}
+						size={24}
+					/>
+				</TouchableOpacity>
 				<Text style={styles.headerTitle}>AshModel</Text>
-				<FontAwesomeIcon
-					style={styles.icon}
-					icon={faToolbox}
-					size={24}
-				/>
+				<TouchableOpacity>
+					<FontAwesomeIcon
+						style={styles.icon}
+						icon={faToolbox}
+						size={24}
+					/>
+				</TouchableOpacity>
 			</View>
 			{/* Milage */}
 			<View style={styles.batterySection}>
@@ -33,6 +64,38 @@ const CarItem = () => {
 			<View style={styles.status}>
 				<Text style={styles.statusText}>Parked</Text>
 			</View>
+			{/* ControlIcons */}
+			<View style={styles.controls}>
+				<TouchableOpacity>
+					<View style={styles.controlsButton}>
+						<FontAwesomeIcon
+							style={styles.icon}
+							icon={faFan}
+							size={24}
+						/>
+					</View>
+				</TouchableOpacity>
+				<TouchableOpacity>
+					<View style={styles.controlsButton}>
+						<FontAwesomeIcon
+							style={styles.icon}
+							icon={faKey}
+							size={24}
+						/>
+					</View>
+				</TouchableOpacity>
+				<TouchableOpacity onPress={clickLock}>
+					<View style={styles.controlsButton}>
+						<FontAwesomeIcon
+							style={styles.icon}
+							icon={locked ? faLock : faUnlockAlt}
+							size={24}
+						/>
+					</View>
+				</TouchableOpacity>
+			</View>
+			{/* Menu */}
+			<Menu />
 		</View>
 	);
 };
