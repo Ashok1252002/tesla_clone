@@ -5,6 +5,7 @@ import {
 	ImageBackground,
 	Image,
 	TouchableOpacity,
+	ScrollView,
 } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -64,38 +65,40 @@ const CarItem = () => {
 			<View style={styles.status}>
 				<Text style={styles.statusText}>Parked</Text>
 			</View>
-			{/* ControlIcons */}
-			<View style={styles.controls}>
-				<TouchableOpacity>
-					<View style={styles.controlsButton}>
-						<FontAwesomeIcon
-							style={styles.icon}
-							icon={faFan}
-							size={24}
-						/>
-					</View>
-				</TouchableOpacity>
-				<TouchableOpacity>
-					<View style={styles.controlsButton}>
-						<FontAwesomeIcon
-							style={styles.icon}
-							icon={faKey}
-							size={24}
-						/>
-					</View>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={clickLock}>
-					<View style={styles.controlsButton}>
-						<FontAwesomeIcon
-							style={styles.icon}
-							icon={locked ? faLock : faUnlockAlt}
-							size={24}
-						/>
-					</View>
-				</TouchableOpacity>
-			</View>
-			{/* Menu */}
-			<Menu />
+			<ScrollView>
+				{/* ControlIcons */}
+				<View style={styles.controls}>
+					<TouchableOpacity>
+						<View style={styles.controlsButton}>
+							<FontAwesomeIcon
+								style={styles.icon}
+								icon={faFan}
+								size={24}
+							/>
+						</View>
+					</TouchableOpacity>
+					<TouchableOpacity>
+						<View style={styles.controlsButton}>
+							<FontAwesomeIcon
+								style={styles.icon}
+								icon={faKey}
+								size={24}
+							/>
+						</View>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={clickLock}>
+						<View style={styles.controlsButton}>
+							<FontAwesomeIcon
+								style={styles.icon}
+								icon={locked ? faLock : faUnlockAlt}
+								size={24}
+							/>
+						</View>
+					</TouchableOpacity>
+				</View>
+				{/* Menu */}
+				<Menu />
+			</ScrollView>
 		</View>
 	);
 };

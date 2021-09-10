@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
 		width: "100%",
 		height: "100%",
 		backgroundColor: "orange",
-		color: "white",
 	},
 	header: {
 		marginTop: 50,
@@ -34,8 +33,8 @@ const styles = StyleSheet.create({
 	},
 	batterySection: {
 		flexDirection: "row",
-		alignItems: "center",
 		justifyContent: "center",
+		alignItems: "center",
 	},
 	batteryImage: {
 		height: 26,
@@ -49,11 +48,10 @@ const styles = StyleSheet.create({
 	},
 	status: {
 		alignItems: "center",
-		justifyContent: "center",
 	},
 	statusText: {
-		color: "white",
 		fontSize: 20,
+		color: "white",
 		fontWeight: "bold",
 	},
 	controls: {
@@ -65,9 +63,8 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: "white",
 		borderRadius: 50,
-		marginLeft: 25,
 		padding: 18,
-		marginRight: 10,
+		marginLeft: 25,
 	},
 });
 
